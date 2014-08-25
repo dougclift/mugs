@@ -1,0 +1,23 @@
+// Place all the styles related to the mugs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#mugs {
+  margin: 0 auto;
+}
+
+.box {
+  margin: 5px;
+  width: 150px;
+  
+}
+
+.box img {
+  width: 100%;
+}
+
+.mugbox {
+  width: 557px;
+  height: 640px;
+  background-color: #eee;
+}

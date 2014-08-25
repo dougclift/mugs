@@ -1,0 +1,59 @@
+<%= form_for @mug, html: { multipart: true } do |f| %>
+  <% if @mug.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mug.errors.count, "error") %> prohibited this mug from being saved:</h2>
+
+      <ul>
+      <% @mug.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-xs-6 col-md-4">
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :middle_name %><br>
+    <%= f.text_field :middle_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :agency %><br>
+    <%= f.text_field :agency %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br>
+    <%= f.text_field :slug %>
+  </div>
+  <div class="field">
+    <%= f.label :birthdate %><br>
+    <%= f.date_select :birthdate, {:include_blank => true, :default => nil} %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+      </div>
+    <div class="col-xs-12 col-sm-6 col-md-8">
+      <div class="field">
+          <%= f.label :image %><br>
+          <%= f.file_field :image, class: "form-control" %>
+        </div> 
+      <div id="resize"></div>
+      <div class="mugbox">
+        <%= image_tag @mug.image.url(:medium) %>
+      </div>
+    
+    </div>
+<% end %>

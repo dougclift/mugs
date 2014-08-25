@@ -1,0 +1,14 @@
+<%= link_to 'New Mug', new_mug_path %>
+<div id="mugs" class="transitions-enabled">
+<% @mugs.each do |mug| %>
+  <div class="box" class="panel panel-default">
+    <%= link_to image_tag(mug.image.url(:medium)), mug %>
+    <div class="panel-body">
+      <strong><%= mug.first_name %> <%= mug.middle_name %> <%= mug.last_name %></strong>
+      <div class="slug">
+        <%= mug.slug %>
+      </div>
+    </div>
+  </div>
+    <% end %>
+</div>
